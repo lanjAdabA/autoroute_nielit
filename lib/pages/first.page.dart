@@ -27,7 +27,7 @@ class _FirstPageState extends State<FirstPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                 Text(counter.toString()),
+                 Text(counter.toString(),style: TextStyle(fontSize: MediaQuery.of(context).size.height*.09),),
                 // TextField(
                 //   controller: firstController,
                 //   onSubmitted: (value) {
@@ -36,22 +36,22 @@ class _FirstPageState extends State<FirstPage> {
                 //     });
                 //   },
                 // ),
-                Row(
+                Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextButton(
                         onPressed: ()async {
                         // var res = await context.router.push(const SecondRoute());
                         // // log(res.toString());
 
-                        context.read<CounterCubit>().increment();
+                        context.read<CounterCubit>().decrement();
                         },
-                        child: const Text("Increment")),
+                        child: const Text("Decrement")),
                          TextButton(
                         onPressed: ()async {
                         // var res = await context.router.push(const SecondRoute());
                         // // log(res.toString());
 
-                        context.read<CounterCubit>().decrement();
+                        context.read<CounterCubit>().increment();
                         },
                         child: const Text("Increment")),
                         
